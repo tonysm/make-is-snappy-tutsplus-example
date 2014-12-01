@@ -9,4 +9,8 @@ class User < ActiveRecord::Base
 
     validates :password, presence: true, length: { in: 4..8 }, allow_nil: true
     validates :password_confirmation, presence: true, length: { in: 4..8 }, allow_nil: true
+
+    def your_questions(params)
+        questions.paginate(page: params[:page]).order('created_at DESC')
+    end
 end
