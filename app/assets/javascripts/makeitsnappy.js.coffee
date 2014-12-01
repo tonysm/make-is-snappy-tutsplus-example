@@ -1,10 +1,6 @@
-Makeitsnapp = {}
+ready = ->
+  $(document).on "click", "#keyword", ->
+    @select()
 
-Makeitsnapp.autoSelectSearch = ->
-  window.onload = ->
-    keyword = document.getElementById 'keyword'
-    keyword.onclick = ->
-      @select()
-
-
-Makeitsnapp.autoSelectSearch()
+$(document).ready(ready)
+$(document).on("page:load", ready)
