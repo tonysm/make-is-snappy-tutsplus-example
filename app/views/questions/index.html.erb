@@ -1,3 +1,11 @@
 <% provide(:title, 'Make it Snappy Q&A') %>
-<h1>Questions#index</h1>
-<p>Find me in app/views/questions/index.html.erb</p>
+
+<div id="ask">
+    <h1>Ask a Question</h1>
+
+    <% if logged_in? %>
+        <%= render 'question_form' %>
+    <% else %>
+        <p>Please, login to ask and answer questions</p>
+    <% end %>
+</div><!-- end ask -->
