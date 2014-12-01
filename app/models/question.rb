@@ -1,6 +1,8 @@
 class Question < ActiveRecord::Base
-  self.per_page = 3
   belongs_to :user
+  has_many :answers
+
+  self.per_page = 3
 
   validates :body, presence: true, length: { in: 10..255 }
   validates :solved, inclusion: { in: [true, false] }
